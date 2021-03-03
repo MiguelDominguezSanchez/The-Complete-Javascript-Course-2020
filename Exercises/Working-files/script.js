@@ -117,29 +117,56 @@ GOOD LUCK
 // 		break
 // }
 
-johnTeamAverage = 89 + 120 + 103
-mikeTeamAverage = 116 + 94 + 123
-maryTeamAverage = 97 + 134 + 105
+// johnTeamAverage = 89 + 120 + 103
+// mikeTeamAverage = 116 + 94 + 123
+// maryTeamAverage = 97 + 134 + 105
 
 // johnTeamAverage = 89 + 120 + 103
 // mikeTeamAverage = 89 + 120 + 103
 // maryTeamAverage = 89 + 120 + 103
 
-switch (true) {
-	case johnTeamAverage < mikeTeamAverage && mikeTeamAverage > maryTeamAverage:
-		console.log('The winner is Mike´s Team')
-		break
-	case johnTeamAverage === mikeTeamAverage &&
-		johnTeamAverage === maryTeamAverage &&
-		mikeTeamAverage === maryTeamAverage:
-		console.log('The has been a draw')
-		break
-	case johnTeamAverage > mikeTeamAverage && johnTeamAverage > maryTeamAverage:
-		console.log('The winner is John´s Team')
-		break
-	case maryTeamAverage > johnTeamAverage && mikeTeamAverage < maryTeamAverage:
-		console.log('The winner is Mary´s Team')
-		break
-	default:
-		console.log('The match was not played')
+// switch (true) {
+// 	case johnTeamAverage < mikeTeamAverage && mikeTeamAverage > maryTeamAverage:
+// 		console.log('The winner is Mike´s Team')
+// 		break
+// 	case johnTeamAverage === mikeTeamAverage &&
+// 		johnTeamAverage === maryTeamAverage &&
+// 		mikeTeamAverage === maryTeamAverage:
+// 		console.log('The has been a draw')
+// 		break
+// 	case johnTeamAverage > mikeTeamAverage && johnTeamAverage > maryTeamAverage:
+// 		console.log('The winner is John´s Team')
+// 		break
+// 	case maryTeamAverage > johnTeamAverage && mikeTeamAverage < maryTeamAverage:
+// 		console.log('The winner is Mary´s Team')
+// 		break
+// 	default:
+// 		console.log('The match was not played')
+// }
+
+/************************************* *
+ * Coding Challenge 2 Solution
+ */
+
+var scoreJohn = (189 + 120 + 103) / 3
+var scoreMike = (129 + 94 + 123) / 3
+var scoreMary = (97 + 134 + 105) / 3
+console.log(scoreJohn, scoreMike, scoreMary)
+
+if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
+	console.log('John´s team wins with ' + scoreJohn + ' points')
+} else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
+	console.log('Mike´s team wins with ' + scoreMary + ' points')
+} else if (scoreMary > scoreJohn && scoreMary > scoreMike) {
+	console.log('Mary´s team wins with ' + scoreMary + ' points')
+} else {
+	console.log('There is a draw')
 }
+
+// if (scoreJohn > scoreMike) {
+// 	console.log("John's team wins with " + scoreJohn + ' points')
+// } else if (scoreMike > scoreJohn) {
+// 	console.log("Mike's Team wins with " + scoreMike + ' points')
+// } else {
+// 	console.log('There is a draw')
+// }
