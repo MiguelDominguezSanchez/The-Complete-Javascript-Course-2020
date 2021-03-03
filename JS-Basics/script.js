@@ -131,3 +131,49 @@ console.log(typeof x)
 // console.log(x)
 // x--
 // console.log(x)
+
+// 11 - If else statements
+
+/*****************************
+ *  If / else statement
+ */
+
+// Make decisions using code
+
+var firstName = 'John'
+var civilStatus = 'married'
+console.log('Hello World')
+
+if (civilStatus === 'married') {
+	console.log(firstName + ' is married!')
+} else {
+	console.log(firstName + ' will hopefully marry soon :)')
+}
+
+var isMarried = false
+if (isMarried) {
+	console.log(firstName + ' is married')
+} else {
+	console.log(firstName + ' will hopefully marry soon :)')
+}
+
+//
+
+var massMark = 78 // Kg
+var heightMark = 1.69 // meters
+
+var massJohn = 92
+var heightJohn = 1.95
+
+var BMIMark = massMark / (heightMark * heightMark)
+var BMIJohn = massJohn / (heightJohn * heightJohn)
+console.log(BMIMark, BMIJohn)
+
+// var markHigherBMI = BMIMark > BMIJohn
+// console.log('Is Mark/+s BMI higher than John/´s? ' + markHigherBMI)
+
+if (BMIMark > BMIJohn) {
+	console.log('Mark/`s BMI is higher than John/`s.')
+} else {
+	console.log('John/`s BMI is higher than Mark/`s.')
+}
