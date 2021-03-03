@@ -259,17 +259,45 @@ The Ternary Operator and switch Statements
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
 
-var height
+// var height
 
-height = 23
+// height = 23
 
-if (height || height === 0) {
-	console.log('Variable is defined')
-} else {
-	console.log('Variable has not been  defined')
+// if (height || height === 0) {
+// 	console.log('Variable is defined')
+// } else {
+// 	console.log('Variable has not been  defined')
+// }
+
+// // Equality operators
+// if (height == '23') {
+// 	console.log('The == operator does type coercion!')
+// }
+
+/************************************* *
+ * Functions
+ */
+
+function calculateAge(birthYear, x, y) {
+	return 2018 - birthYear
 }
 
-// Equality operators
-if (height == '23') {
-	console.log('The == operator does type coercion!')
+var ageJohn = calculateAge(1990)
+var ageMike = calculateAge(1948)
+var ageJane = calculateAge(1969)
+console.log(ageJohn, ageMike, ageJane)
+
+function yearsUntilRetirement(year, firstName) {
+	var age = calculateAge(year)
+	var retirement = 65 - age
+
+	if (retirement > 0) {
+		console.log(firstName + ' retires in ' + retirement + ' years.')
+	} else {
+		console.log(firstName + ' is already retired.')
+	}
 }
+
+yearsUntilRetirement(1990, 'John')
+yearsUntilRetirement(1948, 'Mike')
+yearsUntilRetirement(1969, 'Jane')
