@@ -186,15 +186,68 @@ console.log(typeof x)
  *  Boolean Logic
  */
 
-var firstName = 'John'
-var age = 20
+// var firstName = 'John'
+// var age = 20
 
-if (age < 13) {
-	console.log(firstName + ' is a boy.')
-} else if (age >= 13 && age < 20) {
-	console.log(firstName + ' is a teenager.')
-} else if (age >= 20 && age < 30) {
-	console.log(firstName + ' is a young man.')
+// if (age < 13) {
+// 	console.log(firstName + ' is a boy.')
+// } else if (age >= 13 && age < 20) {
+// 	console.log(firstName + ' is a teenager.')
+// } else if (age >= 20 && age < 30) {
+// 	console.log(firstName + ' is a young man.')
+// } else {
+// 	console.log(firstName + ' is a man.')
+// }
+
+/************************************* *
+The Ternary Operator and switch Satetements
+*/
+
+var firstName = 'John'
+var age = 14
+
+// Ternary Operator
+// age >= 18
+// 	? console.log(firstName + ' drinks beer.')
+// 	: console.log(firstName + ' drinks juice.')
+
+// var drink = age >= 18 ? 'beer' : 'juice'
+// console.log(drink)
+
+/*if (age >= 18) {
+	var drink = 'beer'
 } else {
-	console.log(firstName + ' is a man.')
+	var drink = 'juice'
+}*/
+
+// Switch statement
+var job = 'instructor'
+switch (job) {
+	case 'teacher':
+	case 'instructor':
+		console.log(firstName + ' teaches kids how to code.')
+		break
+	case 'driver':
+		console.log(firstName + ' drives an uber in Lisbon.')
+		break
+	case 'designer':
+		console.log(firstName + ' design beautiful websites.')
+		break
+	default:
+		console.log(firstName + ' does something else.')
+}
+
+age = 56
+switch (true) {
+	case age < 13:
+		console.log(firstName + ' is a boy.')
+		break
+	case age >= 13 && age < 20:
+		console.log(firstName + ' is a teenager.')
+		break
+	case age >= 20 && age < 30:
+		console.log(firstName + ' is a young man.')
+		break
+	default:
+		console.log(firstName + ' is a man.')
 }
