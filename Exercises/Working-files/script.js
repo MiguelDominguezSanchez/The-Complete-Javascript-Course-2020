@@ -148,20 +148,20 @@ GOOD LUCK
  * Coding Challenge 2 Solution
  */
 
-var scoreJohn = (189 + 120 + 103) / 3
-var scoreMike = (129 + 94 + 123) / 3
-var scoreMary = (97 + 134 + 105) / 3
-console.log(scoreJohn, scoreMike, scoreMary)
+// var scoreJohn = (189 + 120 + 103) / 3
+// var scoreMike = (129 + 94 + 123) / 3
+// var scoreMary = (97 + 134 + 105) / 3
+// console.log(scoreJohn, scoreMike, scoreMary)
 
-if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
-	console.log('John´s team wins with ' + scoreJohn + ' points')
-} else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
-	console.log('Mike´s team wins with ' + scoreMary + ' points')
-} else if (scoreMary > scoreJohn && scoreMary > scoreMike) {
-	console.log('Mary´s team wins with ' + scoreMary + ' points')
-} else {
-	console.log('There is a draw')
-}
+// if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
+// 	console.log('John´s team wins with ' + scoreJohn + ' points')
+// } else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
+// 	console.log('Mike´s team wins with ' + scoreMary + ' points')
+// } else if (scoreMary > scoreJohn && scoreMary > scoreMike) {
+// 	console.log('Mary´s team wins with ' + scoreMary + ' points')
+// } else {
+// 	console.log('There is a draw')
+// }
 
 // if (scoreJohn > scoreMike) {
 // 	console.log("John's team wins with " + scoreJohn + ' points')
@@ -170,3 +170,94 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 // } else {
 // 	console.log('There is a draw')
 // }
+
+/********************************
+ * CODING CHALLENGE 3
+ */
+
+/*
+ John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+ 
+ To tip the waiter a fair amount, John cerated a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+ In the end, John would like to have 2 arrays:
+ 1) Containing all three tips (one for each bill)
+ 2) Containing all three final paid amounts (bill + tip).
+
+ (NOTE: To calculate 20% of a value, simply multiply if with 20/100 = 0.2)
+
+ GOOD LUCK
+ */
+
+//  In Dollars
+
+// restaurantOneBill = 124
+// restaurantTwoBill = 48
+// restaurantThreeBill = 268
+
+// restaurantOneTip = 124 * 0.2
+// restaurantTwoTip = 48 * 0.15
+// restaurantThreeTip = 268 * 0.1
+// console.log(restaurantOneTip)
+// console.log(restaurantTwoTip)
+// console.log(restaurantThreeTip)
+
+// restaurantOneFinalAmount = restaurantOneBill + restaurantOneTip
+// restaurantTwoFinalAmount = restaurantTwoBill + restaurantTwoTip
+// restaurantThreeFinalAmount = restaurantThreeBill + restaurantThreeTip
+// console.log(restaurantOneFinalAmount)
+// console.log(restaurantTwoFinalAmount)
+// console.log(restaurantThreeFinalAmount)
+
+// switch (true) {
+// 	case value:
+// 		break
+// 	case value:
+// 		break
+// 	case value:
+// 		break
+
+// 	default:
+// 		break
+// }
+
+// console.log(`Tip the waiter ${}`);
+
+// var tipsArray = []
+// var finalPaidAmounts = []
+
+// tipCalculator()
+
+// finalPaidAmounts.push(
+// 	restaurantOneFinalAmount,
+// 	restaurantTwoFinalAmount,
+// 	restaurantThreeFinalAmount
+// )
+// tipsArray.push(restaurantOneTip, restaurantTwoTip, restaurantThreeTip)
+// console.log(finalPaidAmounts)
+// console.log(tipsArray)
+
+// 21. CODING CHALLENGE 3 SOLUTION
+
+function tipCalculator(bill) {
+	var percentage
+	if (bill < 50) {
+		percentage = 0.2
+	} else if (bill >= 50 && bill < 200) {
+		percentage = 0.15
+	} else {
+		percentage = 0.1
+	}
+	return percentage * bill
+}
+
+var bills = [124, 48, 268]
+var tips = [
+	tipCalculator(bills[0]),
+	tipCalculator(bills[1]),
+	tipCalculator(bills[2]),
+]
+
+var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+
+console.log(tips, finalValues)
