@@ -239,25 +239,108 @@ GOOD LUCK
 
 // 21. CODING CHALLENGE 3 SOLUTION
 
-function tipCalculator(bill) {
-	var percentage
-	if (bill < 50) {
-		percentage = 0.2
-	} else if (bill >= 50 && bill < 200) {
-		percentage = 0.15
-	} else {
-		percentage = 0.1
-	}
-	return percentage * bill
+// function tipCalculator(bill) {
+// 	var percentage
+// 	if (bill < 50) {
+// 		percentage = 0.2
+// 	} else if (bill >= 50 && bill < 200) {
+// 		percentage = 0.15
+// 	} else {
+// 		percentage = 0.1
+// 	}
+// 	return percentage * bill
+// }
+
+// var bills = [124, 48, 268]
+// var tips = [
+// 	tipCalculator(bills[0]),
+// 	tipCalculator(bills[1]),
+// 	tipCalculator(bills[2]),
+// ]
+
+// var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+
+// console.log(tips, finalValues)
+
+/********************************
+ * CODING CHALLENGE 4
+ */
+
+/*
+Let´s remember the first coding challenge where Mark and John compared their BMIs. Let´s now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height.
+2. Then, add a method to each object to calculate the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don´t forget they might have the same BMI.
+
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+GOOD LUCK
+*/
+
+// // Previous exercise BMIs
+// var massMark = 78 // Kg
+// var heightMark = 1.69 // meters
+
+// var massJohn = 92
+// var heightJohn = 1.95
+
+// var BMIMark = massMark / (heightMark * heightMark)
+// var BMIJohn = massJohn / (heightJohn * heightJohn)
+// console.log(BMIMark, BMIJohn)
+
+// //
+
+// var mark = {
+// 	firstName: 'Mark',
+// 	lastName: 'Lorem',
+// 	mass: massMark,
+// 	height: heightMark,
+// 	calcBmi: function () {
+// 		this.bmi = this.mass / (this.height * this.height)
+// 	},
+// }
+
+// var john = {
+// 	firstName: 'John',
+// 	lastName: 'Ipsum',
+// 	mass: massJohn,
+// 	height: heightJohn,
+// 	calcBmi: function () {
+// 		this.bmi = this.mass / (this.height * this.height)
+// 	},
+// }
+
+// console.log(mark)
+// console.log(john)
+
+/********************************
+ * CODING CHALLENGE SOLUTION 4
+ */
+
+var john = {
+	fullName: 'John Smith',
+	mass: 92,
+	height: 1.95,
+	calcBMI: function () {
+		this.bmi = this.mass / (this.height * this.height)
+		return this.bmi
+	},
 }
 
-var bills = [124, 48, 268]
-var tips = [
-	tipCalculator(bills[0]),
-	tipCalculator(bills[1]),
-	tipCalculator(bills[2]),
-]
+var mark = {
+	fullName: 'Mark Miller',
+	mass: 78,
+	height: 1.69,
+	calcBMI: function () {
+		this.bmi = this.mass / (this.height * this.height)
+		return this.bmi
+	},
+}
 
-var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
-
-console.log(tips, finalValues)
+if (john.calcBMI() > mark.calcBMI()) {
+	console.log(john.fullName + ' has a higher BMI of ' + john.bmi)
+} else if (mark.bmi > john.bmi) {
+	console.log(mark.fullName + ' has a higher BMI of ' + mark.bmi)
+} else {
+	console.log('They have the same BMI')
+}
