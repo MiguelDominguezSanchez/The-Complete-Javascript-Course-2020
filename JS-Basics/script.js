@@ -415,9 +415,9 @@ The Ternary Operator and switch Statements
  * Loops and iteration
  */
 
-for (var i = 1; i <= 20; i += 2) {
-	console.log(i)
-}
+// for (var i = 1; i <= 20; i += 2) {
+// 	console.log(i)
+// }
 
 // i = 0, 0 < 10 true, log i to console, i++
 // i = 1, 1 < 10 true, log i to the console, i++
@@ -446,19 +446,56 @@ while (i < john.length) {
 }
 */
 
-// continue and break statements
-var john = ['John', 'Smith', 1990, 'designer', false, 'blue']
-for (var i = 0; i < john.length; i++) {
-	if (typeof john[i] !== 'string') continue
-	console.log(john[i])
-}
+// // continue and break statements
+// var john = ['John', 'Smith', 1990, 'designer', false, 'blue']
+// for (var i = 0; i < john.length; i++) {
+// 	if (typeof john[i] !== 'string') continue
+// 	console.log(john[i])
+// }
 
-for (var i = 0; i < john.length; i++) {
-	if (typeof john[i] !== 'string') break
-	console.log(john[i])
-}
+// for (var i = 0; i < john.length; i++) {
+// 	if (typeof john[i] !== 'string') break
+// 	console.log(john[i])
+// }
 
 // Looping backwards
 // for (var i = john.length - 1; i >= 0; i--) {
 // 	console.log(john[i])
 // }
+
+// 3.6 Hoisting in Practice
+
+////////////////////////////////////////////
+// Lecture: Hoisting
+
+// functions
+calculateAge(1965)
+
+// function declaration // Hoisting only works for function declarations
+function calculateAge(year) {
+	console.log(2016 - year)
+}
+
+// calculateAge(1990)//
+
+// Function Expression
+// retirement(1956) // Not Hoisted
+var retirement = function (year) {
+	console.log(65 - (2016 - year))
+}
+
+// retirement(1990)
+
+// variables
+
+console.log(age)
+var age = 23
+console.log(age)
+
+function foo() {
+	console.log(age)
+	var age = 65
+	console.log(age)
+}
+foo()
+console.log(age)
