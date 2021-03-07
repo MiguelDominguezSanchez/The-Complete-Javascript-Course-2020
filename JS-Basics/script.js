@@ -520,21 +520,62 @@ while (i < john.length) {
 
 //
 
-var a = 'Hello!'
-first()
+// var a = 'Hello!'
+// first()
 
-function first() {
-	var b = 'Hi!'
-	second()
+// function first() {
+// 	var b = 'Hi!'
+// 	second()
 
-	function second() {
-		var c = 'Hey!'
-		third()
-	}
+// 	function second() {
+// 		var c = 'Hey!'
+// 		third()
+// 	}
+// }
+
+// function third() {
+// 	var d = 'John'
+// 	// console.log(c)
+// 	console.log(a + d)
+// }
+
+////////////////////////////////////////////
+// Lecture: TThe this keyword
+
+// console.log(window)
+
+/*
+calculateAge(1985)
+
+// Regular function call & not a method
+// in a regular function call the this keyword always points to the window object
+function calculateAge(year) {
+	console.log(2016 - year)
+	console.log(this)
+}
+*/
+
+var john = {
+	name: 'John',
+	yearOfBirth: 1990,
+	calculateAge: function () {
+		console.log(this)
+		console.log(2016 - this.yearOfBirth)
+		/*
+		function innerFunction() {
+			console.log(this)
+		}
+		innerFunction()
+        */
+	},
 }
 
-function third() {
-	var d = 'John'
-	// console.log(c)
-	console.log(a + d)
+john.calculateAge()
+
+var mike = {
+	name: 'Mike',
+	yearOfBirth: 1984,
 }
+
+mike.calculateAge = john.calculateAge
+mike.calculateAge()
